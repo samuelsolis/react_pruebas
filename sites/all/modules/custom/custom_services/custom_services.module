@@ -1,0 +1,25 @@
+<?php
+
+function custom_services_services_resources() {
+  return array(
+    'content' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'help' => 'Retrieves a note',
+          'file' => array('file' => 'inc', 'module' => 'resources'),
+          'callback' => '_content_retrieve',
+          'access arguments' => TRUE,
+          'args' => array(
+            array(
+              'name' => 'id',
+              'type' => 'int',
+              'description' => 'The id of the content to get. If null service return the latest 10 elements order by created date.',
+              'source' => array('path' => '0'),
+              'optional' => TRUE,
+            ),
+          ),
+        ),
+      ),
+    )
+  );
+}
