@@ -1,0 +1,15 @@
+<?php
+
+function custom_services_services_resources() {
+  $resources = array(
+    'content' => array(
+      'retrieve' => array(
+        'callback' => '_content_retrieve',
+        'access arguments' => TRUE,
+        'help' => t('Return some contentss.'),
+      ),
+    ),
+  );
+
+  return $resources;
+}

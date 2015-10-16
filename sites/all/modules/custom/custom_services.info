@@ -1,0 +1,8 @@
+name = Custom services
+description = Custom web services.
+package = custom
+core = 7.x
+
+files[] = includes/resources.inc
+
+dependencies[] = services
