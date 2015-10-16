@@ -1,25 +1,30 @@
 <?php
 
+module_load_include('inc', 'custom_services', 'resources.inc');
+
 function custom_services_services_resources() {
   return array(
     'content' => array(
-      'operations' => array(
-        'retrieve' => array(
-          'help' => 'Retrieves a note',
-          'file' => array('file' => 'inc', 'module' => 'resources'),
-          'callback' => '_content_retrieve',
-          'access arguments' => TRUE,
-          'args' => array(
-            array(
-              'name' => 'id',
-              'type' => 'int',
-              'description' => 'The id of the content to get. If null service return the latest 10 elements order by created date.',
-              'source' => array('path' => '0'),
-              'optional' => TRUE,
-            ),
+      'retrieve' => array(
+        'callback' => '_content_retrieve',
+        'access callback' => '_custom_services_access',
+        'access arguments' => array('retrieve'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'id',
+            'type' => 'int',
+            'description' => 'Identificador del contenido',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
           ),
         ),
+        'help' => t('Return content.'),
       ),
-    )
+    ),
   );
+}
+
+function _custom_services_access($op, $args) {
+  return true;
 }
