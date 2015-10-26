@@ -4,4 +4,3 @@ package = custom
 core = 7.x
 
 files[] = resources.inc
-dependencies[] = services
