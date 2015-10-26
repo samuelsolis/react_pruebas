@@ -1,5 +1,10 @@
 <?php
 
 /**
- * Drupal require this file
+ * Implements hook_init().
  */
+function custom_react_init() {
+  drupal_add_js('https://fb.me/react-0.14.0.js', 'external');
+  drupal_add_js('https://fb.me/react-dom-0.14.0.js', 'external');
+  drupal_add_js(drupal_get_path('module', 'custom_react') . '/js/general.js');
+}
