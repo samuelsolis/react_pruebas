@@ -11,7 +11,5 @@ function _custom_services_resources_content() {
     ->execute()
     ->fetchAll();
 
-
-
-  return(var_dump($nids));
+  return($nids);
 }

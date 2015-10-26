@@ -1,0 +1,4 @@
+name = Custom React
+description = Custom web services client.
+package = custom
+core = 7.x
